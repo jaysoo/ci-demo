@@ -1,0 +1,43 @@
+{
+  "name": "@tanstack-start-template/lib-01",
+  "version": "0.0.1",
+  "private": true,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "nx": {
+    "sourceRoot": "packages/lib-01/src",
+    "tags": [
+      "scope:shared",
+      "type:util"
+    ],
+    "targets": {
+      "build": {
+        "executor": "nx:run-commands",
+        "outputs": [
+          "{projectRoot}/dist"
+        ],
+        "options": {
+          "command": "tsc -p tsconfig.lib.json",
+          "cwd": "packages/lib-01"
+        }
+      },
+      "typecheck": {
+        "executor": "nx:run-commands",
+        "options": {
+          "command": "tsc -p tsconfig.lib.json --noEmit",
+          "cwd": "packages/lib-01"
+        }
+      },
+      "lint": {
+        "executor": "nx:run-commands",
+        "options": {
+          "command": "echo 'lint ok'",
+          "cwd": "packages/lib-01"
+        }
+      }
+    }
+  }
+}

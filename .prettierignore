@@ -1,0 +1,13 @@
+# Add files here to ignore them from prettier formatting
+/dist
+/coverage
+/.nx/cache
+/.nx/workspace-data
+
+# Generated CI-load fixtures - formatting 1000 machine-written files buys nothing
+/packages/lib-*/src
+/apps/web/src/components/generated
+/apps/web/src/routes/demo
+
+# Written by the TanStack Router plugin - its own header says to exclude it
+/apps/web/src/routeTree.gen.ts

@@ -1,0 +1,29 @@
+{
+  "name": "@tanstack-start-template/stress-cpu",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "sourceRoot": "packages/stress-cpu/src",
+    "tags": [
+      "scope:shared",
+      "type:util"
+    ],
+    "targets": {
+      "build": {
+        "executor": "nx:run-commands",
+        "cache": false,
+        "options": {
+          "command": "node src/burn.mjs",
+          "cwd": "packages/stress-cpu"
+        }
+      },
+      "lint": {
+        "executor": "nx:run-commands",
+        "options": {
+          "command": "echo 'lint ok'",
+          "cwd": "packages/stress-cpu"
+        }
+      }
+    }
+  }
+}
