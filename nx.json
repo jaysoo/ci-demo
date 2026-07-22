@@ -19,5 +19,7 @@
       }
     }
   ],
-  "analytics": true
+  "analytics": true,
+  "nxCloudId": "6a60f64fd3afbebd24aae67f",
+  "nxCloudUrl": "https://staging.nx.app"
 }
