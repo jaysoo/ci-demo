@@ -1,16 +1,14 @@
 # yaml-language-server: $schema=https://cloud.nx.app/nx-cloud/static/schemas/workflow.schema.json
+# HP-2 test: one slow job so a second push lands mid-run (2026-11-25).
 triggers:
   pull-requests:
     event: PR
     branches: ['main']
-  pushes:
-    event: PUSH
-    branches: ['main']
 
 workflows:
   main:
-    runs-on: linux-medium-js
+    runs-on: linux-small-js
     steps:
-      - name: Run affected tasks
+      - name: Slow step
         script: |
-          npx nx affected -t lint test build
+          for i in $(seq 1 5); do echo "minute $i"; sleep 60; done
