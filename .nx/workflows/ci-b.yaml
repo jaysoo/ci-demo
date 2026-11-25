@@ -1,0 +1,81 @@
+# yaml-language-server: $schema=https://cloud.nx.app/nx-cloud/static/schemas/workflow.schema.json
+# Temporary: burns Hobby usage to test the $30 cap on staging (2026-11-24).
+triggers:
+  pull-requests:
+    event: PR
+    branches: ['main']
+  pushes:
+    event: PUSH
+    branches: ['main']
+
+workflows:
+  burn-b01:
+    runs-on: linux-extra-large-js
+    timeout-minutes: 58
+    steps:
+      - name: Burn usage
+        script: |
+          for i in $(seq 1 54); do echo "minute $i"; sleep 60; done
+  burn-b02:
+    runs-on: linux-extra-large-js
+    timeout-minutes: 58
+    steps:
+      - name: Burn usage
+        script: |
+          for i in $(seq 1 54); do echo "minute $i"; sleep 60; done
+  burn-b03:
+    runs-on: linux-extra-large-js
+    timeout-minutes: 58
+    steps:
+      - name: Burn usage
+        script: |
+          for i in $(seq 1 54); do echo "minute $i"; sleep 60; done
+  burn-b04:
+    runs-on: linux-extra-large-js
+    timeout-minutes: 58
+    steps:
+      - name: Burn usage
+        script: |
+          for i in $(seq 1 54); do echo "minute $i"; sleep 60; done
+  burn-b05:
+    runs-on: linux-extra-large-js
+    timeout-minutes: 58
+    steps:
+      - name: Burn usage
+        script: |
+          for i in $(seq 1 54); do echo "minute $i"; sleep 60; done
+  burn-b06:
+    runs-on: linux-extra-large-js
+    timeout-minutes: 58
+    steps:
+      - name: Burn usage
+        script: |
+          for i in $(seq 1 54); do echo "minute $i"; sleep 60; done
+  burn-b07:
+    runs-on: linux-extra-large-js
+    timeout-minutes: 58
+    steps:
+      - name: Burn usage
+        script: |
+          for i in $(seq 1 54); do echo "minute $i"; sleep 60; done
+  burn-b08:
+    runs-on: linux-extra-large-js
+    timeout-minutes: 58
+    steps:
+      - name: Burn usage
+        script: |
+          for i in $(seq 1 54); do echo "minute $i"; sleep 60; done
+  burn-b09:
+    runs-on: linux-extra-large-js
+    timeout-minutes: 58
+    steps:
+      - name: Burn usage
+        script: |
+          for i in $(seq 1 54); do echo "minute $i"; sleep 60; done
+  burn-b10:
+    runs-on: linux-extra-large-js
+    timeout-minutes: 58
+    steps:
+      - name: Burn usage
+        script: |
+          for i in $(seq 1 54); do echo "minute $i"; sleep 60; done
