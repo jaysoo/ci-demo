@@ -1,0 +1,12 @@
+triggers:
+  pull-requests:
+    event: PR
+    branches: ['main']
+
+workflows:
+  long-sleep:
+    runs-on: linux-small-js
+    steps:
+      - name: Sleep 5 minutes
+        script: |
+          for i in $(seq 1 30); do echo "tick $i"; sleep 10; done
