@@ -1,0 +1,35 @@
+triggers:
+  pull-requests:
+    event: PR
+    branches: ['main']
+
+workflows:
+  fails:
+    runs-on: linux-small-js
+    steps:
+      - name: Fail on purpose
+        script: |
+          echo "about to fail"
+          exit 3
+  after-fail:
+    runs-on: linux-small-js
+    needs: fails
+    steps:
+      - name: Should not run
+        script: echo "ran after a failure"
+  times-out:
+    runs-on: linux-small-js
+    timeout-minutes: 1
+    steps:
+      - name: Sleep past the timeout
+        script: |
+          for i in $(seq 1 30); do echo "tick $i"; sleep 10; done
+  missing-secret:
+    runs-on: linux-small-js
+    steps:
+      - name: Read a secret that does not exist
+        script: |
+          echo "secret length: ${#NOPE_SECRET}"
+          test -n "$NOPE_SECRET"
+        env:
+          NOPE_SECRET: ${{ secrets.NOPE_SECRET }}
