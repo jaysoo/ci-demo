@@ -1,0 +1,23 @@
+triggers:
+  pull-requests:
+    event: PR
+    branches: ['main']
+
+workflows:
+  huge-log:
+    runs-on: linux-small-js
+    steps:
+      - name: Print 200k lines
+        script: |
+          seq 1 200000 | sed 's/^/log line /'
+          echo "LAST LINE 200000 reached"
+  fancy-log:
+    runs-on: linux-small-js
+    steps:
+      - name: ANSI, unicode and a long line
+        script: |
+          printf '\033[31mred\033[0m \033[1;32mbold green\033[0m \033[4munderline\033[0m\n'
+          echo "unicode: héllo wörld 日本語 🚀 ✅ ❌"
+          printf 'progress\rdone over progress\n'
+          head -c 20000 /dev/zero | tr '\0' 'x'; echo
+          echo "::warning::looks like a GitHub annotation"
