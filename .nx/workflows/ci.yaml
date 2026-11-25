@@ -12,3 +12,4 @@ workflows:
       - name: Slow step
         script: |
           for i in $(seq 1 5); do echo "minute $i"; sleep 60; done
+# commit B
