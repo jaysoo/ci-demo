@@ -1,0 +1,11 @@
+triggers:
+  pull-requests:
+    event: PR
+    branches: ['main']
+
+workflows:
+  main:
+    runs-on: linux-nope-js
+    steps:
+      - name: Hi
+        script: echo hi

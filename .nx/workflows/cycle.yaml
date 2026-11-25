@@ -1,0 +1,18 @@
+triggers:
+  pull-requests:
+    event: PR
+    branches: ['main']
+
+workflows:
+  a:
+    runs-on: linux-small-js
+    needs: b
+    steps:
+      - name: A
+        script: echo a
+  b:
+    runs-on: linux-small-js
+    needs: a
+    steps:
+      - name: B
+        script: echo b

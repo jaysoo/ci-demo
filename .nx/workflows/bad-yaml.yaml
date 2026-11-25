@@ -1,0 +1,12 @@
+triggers:
+  pull-requests:
+    event: PR
+    branches: ['main']
+
+workflows:
+  main:
+    runs-on: linux-medium-js
+    steps:
+      - name: Hi
+        script: echo hi
+    bad: [unclosed

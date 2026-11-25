@@ -1,0 +1,13 @@
+triggers:
+  pull-requests:
+    event: PR
+    branches: ['main']
+
+workflows:
+  main:
+    runs-on: linux-small-js
+    timeout-minutes: "soon"
+    colour: blue
+    steps:
+      - name: Hi
+        script: echo hi
