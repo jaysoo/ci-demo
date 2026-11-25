@@ -10,4 +10,4 @@ workflows:
     steps:
       - name: Run affected tasks
         script: |
-          npx nx affected -t typecheck
+          npx nx affected -t check
